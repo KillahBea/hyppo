@@ -1,6 +1,4 @@
-:root {
-  font: 16px / 1 sans-serif;
-}
+@import './header.css';
 
 html {
   height: 100%;

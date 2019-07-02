@@ -1,0 +1,18 @@
+header a {
+  color: turquoise;
+}
+header {
+  background-image: url('../assets/applemintlimeonblue2.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link {
+  display: flex;
+  justify-content: flex-end;
+}
