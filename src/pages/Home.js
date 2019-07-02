@@ -19,8 +19,15 @@ class Home extends Component {
           <img src={require('../assets/visitpopshops.png')} />
         </div>
         <div>
-          <img src={require('../assets/StAug.png')} />
-          <img src={require('../assets/StAugBuilding.png')} />
+          <div>
+            <img src={require('../assets/StAug.png')} />
+            <img src={require('../assets/StAugBuilding.png')} />
+          </div>
+          <div>
+            <p />
+            <p />
+            <p />
+          </div>
         </div>
       </>
     )
