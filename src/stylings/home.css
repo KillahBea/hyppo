@@ -1,4 +1,31 @@
 .hero {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2%;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.banners {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flavors {
+  display: flex;
+  justify-content: center;
+  /* border: 5px solid #6d1500; */
+  /* background: #6d1500; */
+  background-image: url('../assets/wood.jpg');
+  margin: 2% 20%;
+  background-size: 100%;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  padding: 5%;
+}
+.flavors a {
+  color: white;
 }

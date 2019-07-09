@@ -7,10 +7,10 @@ class Header extends Component {
     return (
       <header>
         <div className="logo">
-          <img src={Logo} alt="the hyppo logo" />
+          <img className="HyppoImg" src={Logo} alt="the hyppo logo" />
         </div>
         <div className="link">
-          <NavLink>Sign Up</NavLink>
+          <NavLink to="SignUp">Sign Up</NavLink>
           <NavLink>Log In</NavLink>
         </div>
       </header>

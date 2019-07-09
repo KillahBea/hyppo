@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import Header from '../components/Header.js'
+import '../stylings/home.css'
+import { NavLink } from 'react-router-dom'
+
+// import axios from 'axios'
 
 class Home extends Component {
   render() {
@@ -9,13 +13,15 @@ class Home extends Component {
         <div className="hero">
           <img src={require('../assets/bloodoranges.jpg')} />
         </div>
-        <div>
+        <div className="message">
           <p>The Hyppo GIP Tracker</p>
-          <p>Log In to track the pos you've tried, earn and view the badges you've earned.</p>
+          <p>Log In to track the pops you've tried, earn and view the badges you've earned.</p>
         </div>
-        <div>
+        <div className="banners">
           <img src={require('../assets/PUBLIX-BANNER.png')} />
-          <p>Check out the flavors!</p>
+          <div className="flavors">
+            <NavLink to="/Flavors">Check out the flavors!</NavLink>
+          </div>
           <img src={require('../assets/visitpopshops.png')} />
         </div>
         <div>
