@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Header from '../components/Header.js'
+// import Header from '../components/Header.js'
 import '../stylings/home.css'
 import { NavLink } from 'react-router-dom'
 
@@ -9,12 +9,11 @@ class Home extends Component {
   render() {
     return (
       <>
-        <Header />
         <div className="hero">
           <img src={require('../assets/bloodoranges.jpg')} />
         </div>
         <div className="message">
-          <p>The Hyppo GIP Tracker</p>
+          <p className="title">The Hyppo GIP Tracker</p>
           <p>Log In to track the pops you've tried, earn and view the badges you've earned.</p>
         </div>
         <div className="banners">

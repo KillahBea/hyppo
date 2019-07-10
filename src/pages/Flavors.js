@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { NavLink } from 'react-router-dom'
 import '../stylings/flavors.css'
 class Flavors extends Component {
   state = {
@@ -17,7 +16,7 @@ class Flavors extends Component {
     })
   }
 
-  boxClicked = (event, flavor) => {
+  boxClicked = (event, popId) => {
     console.log(event.target.checked)
     console.log(event.target.name)
     console.log(event.target.value)
@@ -29,28 +28,33 @@ class Flavors extends Component {
           this.setState({
             consumed: resp.data
           })
+          console.log(this.state.consumed)
         })
     } else {
+      console.log(event.target.value)
+      console.log(popId)
+      axios.delete('https://localhost:5001/api/consumed/' + event.target.value).then(resp => {
+        console.log(resp.data)
+        // this.setState({
+        //   pop: this.state.pop.filter(pop => pop.Id != event.target.value)
+        //   // pop: this.state.pop.filter(pop => pop.Id != popId)
+        // })
+        console.log("you shouldn't care")
+      })
+      console.log(this.state.pop)
       // delete the consumed instance
     }
-    /**
-     *
-     * {
-     *   id:pop that consumed,
-     *
-     * }
-     */
   }
 
   handleCheckboxChange = event => this.setState({ checked: event.target.checked })
   render() {
     return (
       <>
-        <header>
-          <NavLink to="/">Home</NavLink>
-        </header>
         <div>
-          <h1>Flavors!</h1>
+          <div className="intro">
+            <p className="title">Flavors!</p>
+            <p className="details">Here's a list of just some of the amazing flavors to try!</p>
+          </div>
           <ul>
             {this.state.pop.map(pop => {
               return (

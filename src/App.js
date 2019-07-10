@@ -4,14 +4,14 @@ import Home from './pages/Home'
 import SignUp from './pages/SignUp'
 import LogIn from './pages/LogIn'
 import Flavors from './pages/Flavors'
-// import Header from './components/Header'
+import Header from './components/Header'
 
 class App extends Component {
   render() {
     return (
       <>
         <Router>
-          {/* <Header /> */}
+          <Header />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/SignUp" exact component={SignUp} />

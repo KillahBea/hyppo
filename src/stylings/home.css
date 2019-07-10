@@ -7,7 +7,13 @@
 .message {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 35px;
+}
+.title {
+  margin-bottom: 0;
 }
 .banners {
   display: flex;
@@ -28,4 +34,7 @@
 }
 .flavors a {
   color: white;
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Amatic SC', cursive;
+  font-size: 35px;
 }
