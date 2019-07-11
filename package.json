@@ -5,10 +5,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "react-scripts build",
-    "deploy": "echo 'To setup deployment run: yarn setup-deploy'",
+    "deploy": "netlify deploy --prod --dir=build",
     "setup-deploy": "app-app --deploy && yarn deploy",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postdeploy": "echo 'Your site was deployed to https://hyppo-brittanischuhmacher.netlify.com'"
   },
   "browserslist": [
     ">0.2%",
@@ -21,10 +22,12 @@
     "stylelint-config-standard": "^18.3.0"
   },
   "dependencies": {
+    "auth0-js": "^9.11.1",
     "axios": "^0.19.0",
     "json": "^9.0.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1"
-  }
+  },
+  "homepage": "https://hyppo-brittanischuhmacher.netlify.com"
 }

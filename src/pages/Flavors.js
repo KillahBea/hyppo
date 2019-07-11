@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import '../stylings/flavors.css'
+
+const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
+
 class Flavors extends Component {
   state = {
     pop: [],
@@ -8,7 +11,7 @@ class Flavors extends Component {
     checkedPops: []
   }
   componentDidMount() {
-    axios.get('https://localhost:5001/api/pop').then(resp => {
+    axios.get(API_URL + 'pop').then(resp => {
       console.log({ resp })
       this.setState({
         pop: resp.data
@@ -21,15 +24,13 @@ class Flavors extends Component {
     console.log(event.target.name)
     console.log(event.target.value)
     if (event.target.checked) {
-      axios
-        .post('https://localhost:5001/api/consumed', { popId: event.target.value })
-        .then(resp => {
-          console.log({ resp })
-          this.setState({
-            consumed: resp.data
-          })
-          console.log(this.state.consumed)
+      axios.post(API_URL + 'consumed', { popId: event.target.value }).then(resp => {
+        console.log({ resp })
+        this.setState({
+          consumed: resp.data
         })
+        console.log(this.state.consumed)
+      })
     } else {
       console.log(event.target.value)
       console.log(popId)

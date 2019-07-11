@@ -29,7 +29,7 @@ class Home extends Component {
             <img src={require('../assets/StAugBuilding.png')} />
           </div>
           <div>
-            <p />
+            <p>St Augustine<p />
             <p />
             <p />
             <p />
