@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import '../stylings/flavors.css'
+import auth from '../Auth.js'
 
-const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
+const API_URL = 'https://localhost:5001/api/'
+// const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
 
 class Flavors extends Component {
   state = {
     pop: [],
     popIsChecked: true,
-    checkedPops: []
+    checkedPops: [],
+    profile: {}
   }
   componentDidMount() {
     axios.get(API_URL + 'pop').then(resp => {
@@ -16,32 +19,58 @@ class Flavors extends Component {
       this.setState({
         pop: resp.data
       })
+      axios
+        .get(API_URL + 'consumed', {
+          headers: { Authorization: auth.authorizationHeader() }
+        })
+        //need to return list for user where consumed == true
+        .then(resp => {
+          console.log({ resp })
+          this.setState({
+            checkedPops: resp.data.map(c => c.popId)
+          })
+        })
     })
+    if (this.props.auth.isAuthenticated()) {
+      this.props.auth.getProfile((err, profile) => {
+        this.setState({ profile, err })
+      })
+    }
   }
 
   boxClicked = (event, popId) => {
     console.log(event.target.checked)
     console.log(event.target.name)
     console.log(event.target.value)
+    const _popId = event.target.value
     if (event.target.checked) {
-      axios.post(API_URL + 'consumed', { popId: event.target.value }).then(resp => {
-        console.log({ resp })
-        this.setState({
-          consumed: resp.data
+      axios
+        .post(
+          API_URL + 'consumed',
+          { popId: event.target.value },
+          { headers: { Authorization: auth.authorizationHeader() } }
+        )
+        .then(resp => {
+          console.log({ resp })
+          this.setState({
+            consumed: resp.data,
+            checkedPops: this.state.checkedPops.concat(parseInt(_popId))
+          })
+          console.log(this.state.consumed)
         })
-        console.log(this.state.consumed)
-      })
     } else {
-      console.log(event.target.value)
-      console.log(popId)
-      axios.delete('https://localhost:5001/api/consumed/' + event.target.value).then(resp => {
-        console.log(resp.data)
-        // this.setState({
-        //   pop: this.state.pop.filter(pop => pop.Id != event.target.value)
-        //   // pop: this.state.pop.filter(pop => pop.Id != popId)
-        // })
-        console.log("you shouldn't care")
-      })
+      axios
+        .delete('https://localhost:5001/api/consumed/' + event.target.value, {
+          headers: { Authorization: auth.authorizationHeader() }
+        })
+        .then(resp => {
+          this.setState({
+            checkedPops: this.state.checkedPops.filter(pop => {
+              return pop != parseInt(_popId)
+            })
+          })
+          console.log("you shouldn't care")
+        })
       console.log(this.state.pop)
       // delete the consumed instance
     }
@@ -64,6 +93,7 @@ class Flavors extends Component {
                     name="popIsChecked"
                     type="checkbox"
                     value={pop.id}
+                    checked={this.state.checkedPops.includes(pop.id)}
                     onChange={this.boxClicked}
                   />
                   <label htmlFor={pop.flavorName}>{pop.flavorName}</label>

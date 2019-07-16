@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-
+import axios from 'axios'
 import auth0 from 'auth0-js'
 import history from './history'
+
+const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
 
 const DOMAIN = 'dev-ldf37zem.auth0.com'
 const CLIENTID = 'XS3AZomG9Ge5xdK3t5qXy6TE20HqPNct'
@@ -10,8 +12,8 @@ class Auth {
   userProfile
 
   auth0 = new auth0.WebAuth({
-    domain: dev - ldf37zem.auth0.com,
-    clientID: XS3AZomG9Ge5xdK3t5qXy6TE20HqPNct,
+    domain: 'dev-ldf37zem.auth0.com',
+    clientID: 'XS3AZomG9Ge5xdK3t5qXy6TE20HqPNct',
     redirectUri: `${window.location.protocol}//${window.location.host}/callback`,
     responseType: 'token id_token',
     scope: 'openid email profile'
@@ -45,8 +47,7 @@ class Auth {
         if (callback) {
           callback()
         }
-
-        history.replace('/')
+        window.location.href = '/'
       } else if (err) {
         history.replace('/')
         console.log(err)

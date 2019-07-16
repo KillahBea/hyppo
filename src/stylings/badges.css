@@ -1,0 +1,13 @@
+.blankBadge {
+  background-color: grey;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  width: 30%;
+}

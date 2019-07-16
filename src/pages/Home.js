@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 // import Header from '../components/Header.js'
 import '../stylings/home.css'
 import { NavLink } from 'react-router-dom'
+import Locations from '../components/Locations.js'
 
 // import axios from 'axios'
 
@@ -23,18 +24,7 @@ class Home extends Component {
           </div>
           <img src={require('../assets/visitpopshops.png')} />
         </div>
-        <div>
-          <div>
-            <img src={require('../assets/StAug.png')} />
-            <img src={require('../assets/StAugBuilding.png')} />
-          </div>
-          <div>
-            <p>St Augustine<p />
-            <p />
-            <p />
-            <p />
-          </div>
-        </div>
+        <Locations />
       </>
     )
   }

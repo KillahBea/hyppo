@@ -1,5 +1,11 @@
 header a {
-  color: turquoise;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+}
+.goHere {
+  display: flex;
+  justify-content: end;
+  align-items: space-between;
 }
 header {
   background-image: url('../assets/applemintlimeonblue2.jpg');
@@ -7,6 +13,7 @@ header {
   background-size: cover;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .logo {
   display: flex;
@@ -14,9 +21,62 @@ header {
   align-items: center;
 }
 .HyppoImg {
-  /* height: 50%; */
-  height: 60%;
+  height: 50%;
+  /* height: 60%; */
+}
+NavLink {
+  display: flex;
+  justify-content: baseline;
 }
 .link {
-  justify-self: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 5rem;
+}
+.LogOut {
+  display: flex;
+  justify-content: right;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-size: 2rem;
+}
+.profileImage {
+  height: auto;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: right;
+  margin-right: 0.5rem;
+}
+.signUp {
+  height: 30%;
+  display: flex;
+  justify-content: right;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.profileName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  width: 40%;
+  /* border: 3px solid pink; */
+  height: 3rem;
+  font-size: 2rem;
+}
+
+.profileName > div {
+  display: flex;
 }
