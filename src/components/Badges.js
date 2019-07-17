@@ -7,7 +7,7 @@ class Badges extends Component {
       <>
         <section className="badges">
           {this.props.currentPops.length >= 2 ? (
-            <div>
+            <div className="doodle">
               <img src={require('../assets/popImages/pop1.png')} />
             </div>
           ) : (

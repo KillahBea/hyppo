@@ -11,18 +11,22 @@ class Home extends Component {
     return (
       <>
         <div className="hero">
-          <img src={require('../assets/bloodoranges.jpg')} />
+          <img src={require('../assets/bloodoranges.jpg')} className="hero-image" />
         </div>
         <div className="message">
           <p className="title">The Hyppo GIP Tracker</p>
           <p>Log In to track the pops you've tried, earn and view the badges you've earned.</p>
         </div>
         <div className="banners">
-          <img src={require('../assets/PUBLIX-BANNER.png')} />
+          <div className="publix">
+            <img src={require('../assets/PUBLIX-BANNER.png')} />
+          </div>
           <div className="flavors">
             <NavLink to="/Flavors">Check out the flavors!</NavLink>
           </div>
-          <img src={require('../assets/visitpopshops.png')} />
+          <div className="visit">
+            <img src={require('../assets/visitpopshops.png')} />
+          </div>
         </div>
         <Locations />
       </>

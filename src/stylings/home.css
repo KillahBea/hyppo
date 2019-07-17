@@ -2,8 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 2%;
+  margin: 2% 5% 5% 5%;
+  /* height: 70%;
+  width: auto; */
 }
+
+.hero-image {
+  height: 70%;
+  width: auto;
+}
+
 .message {
   display: flex;
   flex-direction: column;
@@ -11,6 +19,7 @@
   align-items: center;
   font-family: 'Amatic SC', cursive;
   font-size: 35px;
+  /* margin-top: 5%; */
 }
 .title {
   margin-bottom: 0;
@@ -20,13 +29,14 @@
   flex-direction: column;
   justify-content: center;
 }
+.publix {
+  margin: 2% 5% 2% 5%;
+}
 .flavors {
   display: flex;
   justify-content: center;
-  /* border: 5px solid #6d1500; */
-  /* background: #6d1500; */
   background-image: url('../assets/wood.jpg');
-  margin: 2% 20%;
+  margin: 1% 5% 1% 5%;
   background-size: 100%;
   background-position: 100%;
   background-repeat: no-repeat;
@@ -34,7 +44,14 @@
 }
 .flavors a {
   color: white;
-  /* font-family: 'Pacifico', cursive; */
   font-family: 'Amatic SC', cursive;
-  font-size: 35px;
+  font-size: 5rem;
+}
+@media (max-width: 650px) {
+  .flavors a {
+    font-size: 2rem;
+  }
+}
+.visit {
+  margin: 2% 5% 2% 5%;
 }

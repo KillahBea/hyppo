@@ -52,6 +52,9 @@ class Header extends Component {
                 <img className="profileImage" src={this.state.profileImage} />
                 <NavLink to="/Profile">{this.state.name}'s Profile</NavLink>
               </div>
+              <div>
+                <NavLink to="/Flavors">Flavors</NavLink>
+              </div>
 
               <button onClick={this.logOut} className="LogOut">
                 Log Out

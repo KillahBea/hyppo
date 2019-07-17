@@ -8,7 +8,17 @@
 .badges {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* align-items: center; */
+  /* height: auto; */
+  /* width: 10%; */
+}
+.doodle {
   height: auto;
   width: 30%;
+}
+.blankBadge {
+  height: auto;
+  width: 30%;
+}
+.doodle img {
 }
