@@ -2,7 +2,7 @@
   "private": true,
   "name": "hyppo",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENV=development; react-scripts start",
     "build": "react-scripts build",
     "predeploy": "react-scripts build",
     "deploy": "netlify deploy --prod --dir=build",

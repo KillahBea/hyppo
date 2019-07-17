@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import auth0 from 'auth0-js'
 import history from './history'
+import config from './config'
 
-const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
+const API_URL = config.API_URL
 
 const DOMAIN = 'dev-ldf37zem.auth0.com'
 const CLIENTID = 'XS3AZomG9Ge5xdK3t5qXy6TE20HqPNct'

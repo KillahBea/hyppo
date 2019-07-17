@@ -3,9 +3,10 @@ import axios from 'axios'
 import auth from '../Auth.js'
 import profile from '../stylings/profile.css'
 import Badges from '../components/Badges.js'
+import config from '../config'
 
-// const API_URL = 'https://localhost:5001/api/'
-const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
+const API_URL = config.API_URL
+
 class Profile extends Component {
   state = {
     consumed: []
