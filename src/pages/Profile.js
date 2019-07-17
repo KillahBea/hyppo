@@ -4,8 +4,8 @@ import auth from '../Auth.js'
 import profile from '../stylings/profile.css'
 import Badges from '../components/Badges.js'
 
-const API_URL = 'https://localhost:5001/api/'
-// const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
+// const API_URL = 'https://localhost:5001/api/'
+const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
 class Profile extends Component {
   state = {
     consumed: []
@@ -28,11 +28,7 @@ class Profile extends Component {
         <Badges currentPops={this.state.consumed} />
         <ul className="consumedPopName">
           {this.state.consumed.map(pop => {
-            return (
-              <li className="consumedPopName" key={pop.id}>
-                {pop.pop.flavorName}
-              </li>
-            )
+            return <li key={pop.id}>{pop.pop.flavorName}</li>
           })}
         </ul>
       </>

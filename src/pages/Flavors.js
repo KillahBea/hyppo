@@ -3,8 +3,8 @@ import axios from 'axios'
 import '../stylings/flavors.css'
 import auth from '../Auth.js'
 
-const API_URL = 'https://localhost:5001/api/'
-// const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
+// const API_URL = 'https://localhost:5001/api/'
+const API_URL = 'https://hyppo-gip.herokuapp.com/api/'
 
 class Flavors extends Component {
   state = {
@@ -60,7 +60,7 @@ class Flavors extends Component {
         })
     } else {
       axios
-        .delete('https://localhost:5001/api/consumed/' + event.target.value, {
+        .delete(API_URL + 'pop/' + event.target.value, {
           headers: { Authorization: auth.authorizationHeader() }
         })
         .then(resp => {
