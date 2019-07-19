@@ -1,24 +1,32 @@
 .blankBadge {
   background-color: grey;
   border-radius: 50%;
-  height: 3rem;
-  width: 3rem;
+}
+
+.badge {
+  height: 15rem;
+  width: 15rem;
+  margin: 1% 1%;
 }
 
 .badges {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: center; */
-  /* height: auto; */
-  /* width: 10%; */
+  justify-content: center;
+  margin-top: 5%;
+  width: 100%;
 }
-.doodle {
-  height: auto;
-  width: 30%;
+.badge img,
+.blankBadge img {
+  height: 100%;
+  width: 100%;
 }
-.blankBadge {
-  height: auto;
-  width: 30%;
+@media (min-width: 650px) {
+  .blankBadge {
+    height: 14rem;
+    width: 14rem;
+  }
 }
-.doodle img {
+.LocationDetails p {
+  margin-left: 2%;
 }

@@ -1,4 +1,16 @@
-.LocationImage {
+.LocationImage img,
+.BuildingImage img {
   height: 60%;
   width: 60%;
+}
+.LocationDetails {
+  display: flex;
+  justify-content: center;
+  margin-left: 5%;
+}
+.strong {
+  font-size: 2rem;
+}
+p {
+  font-family: 'Amatic SC', cursive;
 }

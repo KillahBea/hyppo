@@ -19,17 +19,19 @@ class Flavors extends Component {
       this.setState({
         pop: resp.data
       })
-      axios
-        .get(API_URL + 'consumed', {
-          headers: { Authorization: auth.authorizationHeader() }
-        })
-        //need to return list for user where consumed == true
-        .then(resp => {
-          console.log({ resp })
-          this.setState({
-            checkedPops: resp.data.map(c => c.popId)
+      if (this.props.auth.isAuthenticated()) {
+        axios
+          .get(API_URL + 'consumed', {
+            headers: { Authorization: auth.authorizationHeader() }
           })
-        })
+          //need to return list for user where consumed == true
+          .then(resp => {
+            console.log({ resp })
+            this.setState({
+              checkedPops: resp.data.map(c => c.popId)
+            })
+          })
+      }
     })
     if (this.props.auth.isAuthenticated()) {
       this.props.auth.getProfile((err, profile) => {
@@ -42,36 +44,37 @@ class Flavors extends Component {
     console.log(event.target.checked)
     console.log(event.target.name)
     console.log(event.target.value)
-    const _popId = event.target.value
-    if (event.target.checked) {
-      axios
-        .post(
-          API_URL + 'consumed',
-          { popId: event.target.value },
-          { headers: { Authorization: auth.authorizationHeader() } }
-        )
-        .then(resp => {
-          console.log({ resp })
-          this.setState({
-            consumed: resp.data,
-            checkedPops: this.state.checkedPops.concat(parseInt(_popId))
+    if (this.props.auth.isAuthenticated()) {
+      const _popId = event.target.value
+      if (event.target.checked) {
+        axios
+          .post(
+            API_URL + 'consumed',
+            { popId: event.target.value },
+            { headers: { Authorization: auth.authorizationHeader() } }
+          )
+          .then(resp => {
+            console.log({ resp })
+            this.setState({
+              consumed: resp.data,
+              checkedPops: this.state.checkedPops.concat(parseInt(_popId))
+            })
+            console.log(this.state.consumed)
           })
-          console.log(this.state.consumed)
-        })
-    } else {
-      axios
-        .delete(API_URL + 'consumed/' + event.target.value, {
-          headers: { Authorization: auth.authorizationHeader() }
-        })
-        .then(resp => {
-          this.setState({
-            checkedPops: this.state.checkedPops.filter(pop => {
-              return pop != parseInt(_popId)
+      } else {
+        axios
+          .delete(API_URL + 'consumed/' + event.target.value, {
+            headers: { Authorization: auth.authorizationHeader() }
+          })
+          .then(resp => {
+            this.setState({
+              checkedPops: this.state.checkedPops.filter(pop => {
+                return pop != parseInt(_popId)
+              })
             })
           })
-          console.log("you shouldn't care")
-        })
-      console.log(this.state.pop)
+        console.log(this.state.pop)
+      }
       // delete the consumed instance
     }
   }

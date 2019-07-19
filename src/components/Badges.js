@@ -7,53 +7,53 @@ class Badges extends Component {
       <>
         <section className="badges">
           {this.props.currentPops.length >= 2 ? (
-            <div className="doodle">
+            <div className="badge">
               <img src={require('../assets/popImages/pop1.png')} />
             </div>
           ) : (
-            <div className="blankBadge">&nbsp;</div>
+            <div className="badge blankBadge">&nbsp;</div>
           )}
           {this.props.currentPops.length >= 4 ? (
-            <div>
+            <div className="badge">
               <img src={require('../assets/popImages/pop2.png')} />
             </div>
           ) : (
-            <div className="blankBadge">&nbsp;</div>
+            <div className="badge blankBadge">&nbsp;</div>
           )}
           {this.props.currentPops.length >= 6 ? (
-            <div>
+            <div className="badge">
               <img src={require('../assets/popImages/pop3.png')} />
             </div>
           ) : (
-            <div className="blankBadge">&nbsp;</div>
+            <div className="badge blankBadge">&nbsp;</div>
           )}
           {this.props.currentPops.length >= 8 ? (
-            <div>
+            <div className="badge">
               <img src={require('../assets/popImages/pop4.png')} />
             </div>
           ) : (
-            <div className="blankBadge">&nbsp;</div>
+            <div className="badge blankBadge">&nbsp;</div>
           )}
           {this.props.currentPops.length >= 10 ? (
-            <div>
+            <div className="badge">
               <img src={require('../assets/popImages/pop5.png')} />
             </div>
           ) : (
-            <div className="blankBadge">&nbsp;</div>
+            <div className="badge blankBadge">&nbsp;</div>
           )}
           {this.props.currentPops.length >= 12 ? (
-            <div>
+            <div className="badge">
               <img src={require('../assets/popImages/pop6.png')} />
             </div>
           ) : (
-            <div className="blankBadge">&nbsp;</div>
+            <div className="badge blankBadge">&nbsp;</div>
           )}
           {this.props.currentPops.length >= 14 ? (
-            <div>
+            <div className="badge">
               <img src={require('../assets/popImages/pop7.png')} />
             </div>
           ) : (
-            <div className="blankBadge">&nbsp;</div>
+            <div className="badge blankBadge">&nbsp;</div>
           )}
         </section>
       </>

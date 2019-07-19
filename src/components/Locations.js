@@ -14,7 +14,7 @@ class Locations extends Component {
               <img src={require('../assets/StAugBuilding.png')} />
             </div>
             <div>
-              <p>Charlotte Street</p>
+              <p className="strong">Charlotte Street</p>
               <p>48 Charlotte Street</p>
               <p>Saint Augustine, FL 32084</p>
               <p>(904)217-7853</p>
@@ -27,7 +27,7 @@ class Locations extends Component {
           </div>
           <div className="LocationDetails">
             <div>
-              <p>Saint George Street</p>
+              <p className="strong">Saint George Street</p>
               <p>70 Saint George Street</p>
               <p>Saint Augustine, FL 32084</p>
               <p>(904) 547-2980</p>
@@ -49,7 +49,7 @@ class Locations extends Component {
               <img src={require('../assets/JacksonvilleBuilding.png')} />
             </div>
             <div>
-              <p>Riverside</p>
+              <p className="strong">Riverside</p>
               <p>90 Riverside Ave STE 605</p>
               <p>Jacksonville, FL 32202</p>
               <p>(904) 551-0361</p>
@@ -68,7 +68,7 @@ class Locations extends Component {
               <img src={require('../assets/StPeteBuilding.png')} />
             </div>
             <div>
-              <p>St Pete Hyppo</p>
+              <p className="strong">St Pete Hyppo</p>
               <p>627 Central Ave</p>
               <p>Saint Petersburg, FL 33701</p>
               <p>(727) 498-6536</p>
