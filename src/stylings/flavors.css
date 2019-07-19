@@ -11,8 +11,23 @@
   font-size: 35px;
   margin-top: 0;
 }
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 30rem;
+  width: 100%;
+}
+
+@media (max-width: 650px) {
+  .list {
+    height: 50rem;
+  }
+}
 .FlavorList {
   list-style: none;
   font-family: 'Amatic SC', cursive;
   font-size: 22px;
+  margin: 0.25rem;
 }

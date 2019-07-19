@@ -88,7 +88,7 @@ class Flavors extends Component {
             <p className="title">Flavors!</p>
             <p className="details">Here's a list of just some of the amazing flavors to try!</p>
           </div>
-          <ul>
+          <ul className="list">
             {this.state.pop.map(pop => {
               return (
                 <li className="FlavorList" key={pop.id}>
