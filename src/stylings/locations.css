@@ -1,6 +1,6 @@
 .LocationImage img,
 .BuildingImage img {
-  height: 60%;
+  height: auto;
   width: 60%;
 }
 .LocationDetails {
